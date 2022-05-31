@@ -8,6 +8,7 @@ class Home extends BaseController
     {
         $data['activeMenu'] = 'dashboard';
         echo view('header');
+        echo view('topbar');
         echo view('sidebar', $data);
         echo view('dashboard');
         echo view('footer');

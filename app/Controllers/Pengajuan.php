@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Pinjam extends BaseController
+class Pengajuan extends BaseController
 {
     public function index()
     {
@@ -13,13 +13,13 @@ class Pinjam extends BaseController
         echo view('footer');
     }
 
-    public function kendaraan()
+    public function pemeliharaan()
     {
-        $data['activeMenu'] = 'pinjam-kendaraan';
+        $data['activeMenu'] = 'pengajuan-pemeliharaan';
         echo view('header');
         echo view('topbar');
         echo view('sidebar', $data);
-        echo view('pinjam_kendaraan');
+        echo view('pengajuan_pemeliharaan');
         echo view('footer');
     }
 }
