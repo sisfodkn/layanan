@@ -27,7 +27,15 @@ class User extends BaseController
                 ];
                 session()->set($dataSession);
                 return redirect()->to(base_url('/'));
+            } else {
+                session()->setFlashdata('username', $username);
+                session()->setFlashdata('error', 'Username dan Password Salah');
+                return redirect()->back();
             }
+        } else {
+            session()->setFlashdata('username', $username);
+            session()->setFlashdata('error', 'Username dan Password Salah');
+            return redirect()->back();
         }
     }
 

@@ -8,7 +8,7 @@
 
             <div class="d-flex justify-content-center py-4">
               <a href="index.html" class="logo d-flex align-items-center w-auto">
-                <img src="assets/img/logo-wtn.png" alt="">
+                <img src="<?php echo base_url('assets/img/logo-wtn.png'); ?>" alt="">
                 <span class="d-none d-lg-block">Layanan Terpadu <br /> Setjen Wantannas</span>
               </a>
             </div><!-- End Logo -->
@@ -24,10 +24,16 @@
 
                 <form action="<?= base_url(); ?>/user/verifikasi" method="post" class="row g-3 needs-validation" novalidate>
 
+                  <?php if (session()->getFlashdata('error')) { ?>
+                    <div class="alert alert-warning alert-dismissible fade show middle" role="alert">
+                      <?php echo session()->getFlashdata('error'); ?>
+                    </div>
+                  <?php } ?>
+
                   <div class="col-12">
                     <label for="username" class="form-label">Username</label>
                     <div class="input-group has-validation">
-                      <input type="text" name="username" class="form-control" id="username" required>
+                      <input type="text" name="username" class="form-control" id="username" value="<?php echo session()->getFlashdata('username'); ?>" required>
                       <div class="invalid-feedback">Silahkan isi username anda.</div>
                     </div>
                   </div>
