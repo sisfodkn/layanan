@@ -6,9 +6,9 @@ class User extends BaseController
 {
     public function index()
     {
-        echo view('header');
+        echo view('base/header');
         echo view('login');
-        echo view('footer');
+        echo view('base/footer');
     }
 
     public function verifikasi()

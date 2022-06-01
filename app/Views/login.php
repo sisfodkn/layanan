@@ -7,7 +7,7 @@
           <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
             <div class="d-flex justify-content-center py-4">
-              <a href="index.html" class="logo d-flex align-items-center w-auto">
+              <a href="<?php echo base_url('/') ?>" class="logo d-flex align-items-center w-auto">
                 <img src="<?php echo base_url('assets/img/logo-wtn.png'); ?>" alt="">
                 <span class="d-none d-lg-block">Layanan Terpadu <br /> Setjen Wantannas</span>
               </a>

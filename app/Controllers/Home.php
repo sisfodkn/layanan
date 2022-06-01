@@ -7,10 +7,10 @@ class Home extends BaseController
     public function index()
     {
         $data['activeMenu'] = 'dashboard';
-        echo view('header');
-        echo view('topbar');
-        echo view('sidebar', $data);
+        echo view('base/header');
+        echo view('base/topbar');
+        echo view('base/sidebar', $data);
         echo view('dashboard');
-        echo view('footer');
+        echo view('base/footer');
     }
 }

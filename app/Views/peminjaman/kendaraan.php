@@ -1,12 +1,12 @@
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Permintaan ATK</h1>
+    <h1>Peminjaman Kendaraan</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Permintaan</li>
-        <li class="breadcrumb-item active">Alat Tulis Kantor</li>
+        <li class="breadcrumb-item"><a href="<?php echo base_url('/') ?>">Home</a></li>
+        <li class="breadcrumb-item">Peminjaman</li>
+        <li class="breadcrumb-item active">Kendaraan</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -15,33 +15,47 @@
       <div class="col-lg-9">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Formulir Permintaan</h5>
+            <h5 class="card-title">Formulir Peminjaman</h5>
 
             <form class="row g-3">
               <div class="col-md-12">
                 <div class="form-floating">
-                  <input type="text" class="form-control" id="floatingUnit" placeholder="Unit Kerja">
-                  <label for="floatingUnit">Unit Kerja</label>
+                  <input type="text" class="form-control" id="floatingName" placeholder="Nama Peminjam">
+                  <label for="floatingName">Nama Peminjam</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="floatingDate" placeholder="Tanggal Pinjam Awal">
+                  <label for="floatingDate">Tanggal Pinjam Awal</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="floatingDate" placeholder="Tanggal Pinjam Akhir">
+                  <label for="floatingDate">Tanggal Pinjam Akhir</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="floatingSelect" aria-label="Jenis">
+                    <option selected>Motor</option>
+                    <option value="1">Mini Bus</option>
+                    <option value="2">Sedan</option>
+                  </select>
+                  <label for="floatingSelect">Jenis Kendaraan</label>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="List Alat Tulis Kantor" id="floatingTextarea" style="height: 100px;"></textarea>
-                  <label for="floatingTextarea">List Alat Tulis Kantor</label>
+                  <textarea class="form-control" placeholder="Alamat Tujuan" id="floatingTextarea" style="height: 100px;"></textarea>
+                  <label for="floatingTextarea">Alamat Tujuan</label>
                 </div>
               </div>
-              <!--
-                <div class="col-md-12">
-                  <div class="form-floating autocomplete">
-                    <input type="text" class="form-control" id="myInput" placeholder="Jenis ATK">
-                    <label for="myInput">Jenis ATK</label>
-                  </div>
-                </div>
-                -->
               <div class="col-12">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Catatan" id="floatingTextarea" style="height: 100px;"></textarea>
-                  <label for="floatingTextarea">Catatan</label>
+                  <textarea class="form-control" placeholder="Keterangan" id="floatingTextarea" style="height: 100px;"></textarea>
+                  <label for="floatingTextarea">Keperluan</label>
                 </div>
               </div>
               <div class="text-left">
@@ -51,7 +65,7 @@
             </form>
 
           </div>
-        </div><!-- End Pengajuan Pemeliharaan Form -->
+        </div><!-- End Peminjaman Kendaraan Form -->
       </div>
     </div>
   </section>

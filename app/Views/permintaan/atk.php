@@ -1,12 +1,12 @@
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Pengajuan Pemeliharaan</h1>
+    <h1>Permintaan ATK</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item">Pengajuan</li>
-        <li class="breadcrumb-item active">Pemeliharaan</li>
+        <li class="breadcrumb-item"><a href="<?php echo base_url('/') ?>">Home</a></li>
+        <li class="breadcrumb-item">Permintaan</li>
+        <li class="breadcrumb-item active">Alat Tulis Kantor</li>
       </ol>
     </nav>
   </div><!-- End Page Title -->
@@ -15,7 +15,7 @@
       <div class="col-lg-9">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Formulir Pemeliharaan</h5>
+            <h5 class="card-title">Formulir Permintaan</h5>
 
             <form class="row g-3">
               <div class="col-md-12">
@@ -24,26 +24,20 @@
                   <label for="floatingUnit">Unit Kerja</label>
                 </div>
               </div>
-              <div class="col-md-12">
-                <div class="form-floating mb-3">
-                  <select class="form-select" id="floatingSelect" aria-label="Ruangan">
-                    <option selected>Server MB15</option>
-                    <option value="1">Sitroom</option>
-                    <option value="2">NKRI</option>
-                    <option value="3">Wawasan Nusantara</option>
-                    <option value="4">Rapat Sisnas</option>
-                    <option value="5">Rapat Polstra</option>
-                    <option value="6">Rapat Debang</option>
-                  </select>
-                  <label for="floatingSelect">Ruangan</label>
-                </div>
-              </div>
               <div class="col-12">
                 <div class="form-floating">
-                  <textarea class="form-control" placeholder="Jenis Pemeliharaan" id="floatingTextarea" style="height: 100px;"></textarea>
-                  <label for="floatingTextarea">Jenis Pemeliharaan</label>
+                  <textarea class="form-control" placeholder="List Alat Tulis Kantor" id="floatingTextarea" style="height: 100px;"></textarea>
+                  <label for="floatingTextarea">List Alat Tulis Kantor</label>
                 </div>
               </div>
+              <!--
+                <div class="col-md-12">
+                  <div class="form-floating autocomplete">
+                    <input type="text" class="form-control" id="myInput" placeholder="Jenis ATK">
+                    <label for="myInput">Jenis ATK</label>
+                  </div>
+                </div>
+                -->
               <div class="col-12">
                 <div class="form-floating">
                   <textarea class="form-control" placeholder="Catatan" id="floatingTextarea" style="height: 100px;"></textarea>

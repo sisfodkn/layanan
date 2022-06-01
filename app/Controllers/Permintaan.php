@@ -6,20 +6,20 @@ class Permintaan extends BaseController
 {
     public function index()
     {
-        echo view('header');
-        echo view('topbar');
-        echo view('sidebar');
-        echo view('dashboard');
-        echo view('footer');
+        echo view('base/header');
+        echo view('base/topbar');
+        echo view('base/sidebar');
+        echo view('base/dashboard');
+        echo view('base/footer');
     }
 
     public function atk()
     {
         $data['activeMenu'] = 'permintaan-atk';
-        echo view('header');
-        echo view('topbar');
-        echo view('sidebar', $data);
-        echo view('permintaan_atk');
-        echo view('footer');
+        echo view('base/header');
+        echo view('base/topbar');
+        echo view('base/sidebar', $data);
+        echo view('permintaan/atk');
+        echo view('base/footer');
     }
 }

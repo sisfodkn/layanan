@@ -18,7 +18,7 @@
       </a>
       <ul id="masterdata-nav" class="nav-content collapse <?php if (in_array($activeMenu, ['masterdata-pegawai'])) echo "show" ?>" data-bs-parent="#sidebar-nav">
         <li>
-          <a href="<?php echo base_url('/masterdata_pegawai') ?>" class="<?php if ($activeMenu == 'masterdata-pegawai') echo "active" ?>">
+          <a href="<?php echo base_url('/masterdata/pegawai') ?>" class="<?php if ($activeMenu == 'masterdata-pegawai') echo "active" ?>">
             <i class="bi bi-circle"></i><span>Data Pegawai</span>
           </a>
         </li>
@@ -48,7 +48,7 @@
       </a>
       <ul id="peminjaman-nav" class="nav-content collapse <?php if (in_array($activeMenu, ['pinjam-kendaraan'])) echo "show" ?>" data-bs-parent="#sidebar-nav">
         <li>
-          <a href="<?php echo base_url('/pinjam_kendaraan') ?>" class="<?php if ($activeMenu == 'pinjam-kendaraan') echo "active" ?>">
+          <a href="<?php echo base_url('/peminjaman/kendaraan') ?>" class="<?php if ($activeMenu == 'pinjam-kendaraan') echo "active" ?>">
             <i class="bi bi-circle"></i><span>Pinjam Kendaraan</span>
           </a>
         </li>
@@ -76,7 +76,7 @@
       </a>
       <ul id="pengajuan-nav" class="nav-content collapse <?php if (in_array($activeMenu, ['pengajuan-pemeliharaan'])) echo "show" ?>" data-bs-parent="#sidebar-nav">
         <li>
-          <a href="<?php echo base_url('/pengajuan_pemeliharaan') ?>" class="<?php if ($activeMenu == 'pengajuan-pemeliharaan') echo "active" ?>">
+          <a href="<?php echo base_url('/pengajuan/pemeliharaan') ?>" class="<?php if ($activeMenu == 'pengajuan-pemeliharaan') echo "active" ?>">
             <i class="bi bi-circle"></i><span>Pemeliharaan</span>
           </a>
         </li>
@@ -99,7 +99,7 @@
       </a>
       <ul id="permintaan-nav" class="nav-content collapse <?php if (in_array($activeMenu, ['permintaan-atk'])) echo "show" ?>" data-bs-parent="#sidebar-nav">
         <li>
-          <a href="<?php echo base_url('/permintaan_atk') ?>" class="<?php if ($activeMenu == 'permintaan-atk') echo "active" ?>">
+          <a href="<?php echo base_url('/permintaan/atk') ?>" class="<?php if ($activeMenu == 'permintaan-atk') echo "active" ?>">
             <i class="bi bi-circle"></i><span>Alat Tulis Kantor</span>
           </a>
         </li>
@@ -141,13 +141,6 @@
       </ul>
     </li><!-- End Laporan Nav -->
 
-    <li class="nav-heading">Contoh Form</li>
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="<?php echo base_url('/login') ?>">
-        <i class="bi bi-grid"></i>
-        <span>Login</span>
-      </a>
-    </li><!-- End Contoh Form Nav -->
     <!-- 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
