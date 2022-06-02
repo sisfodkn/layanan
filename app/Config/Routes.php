@@ -36,7 +36,7 @@ $routes->get('/login', 'User::index');
 
 // Master Data
 $routes->get('/masterdata/pegawai', 'MasterData::pegawai', ['filter' => 'usersAuth']);
-$routes->get('/masterdata/unitkerja', 'MasterData::unitkerja', ['filter' => 'usersAuth']);
+$routes->get('/unitkerja', 'Unitkerja::index', ['filter' => 'usersAuth']);
 
 // Peminjaman
 $routes->get('/peminjaman/kendaraan', 'Peminjaman::kendaraan', ['filter' => 'usersAuth']);

@@ -18,7 +18,7 @@
       </a>
       <ul id="masterdata-nav" class="nav-content collapse <?php if (in_array($activeMenu, ['masterdata-pegawai', 'masterdata-unitkerja'])) echo "show" ?>" data-bs-parent="#sidebar-nav">
         <li>
-          <a href="<?php echo base_url('/masterdata/unitkerja') ?>" class="<?php if ($activeMenu == 'masterdata-unitkerja') echo "active" ?>">
+          <a href="<?php echo base_url('/unitkerja') ?>" class="<?php if ($activeMenu == 'masterdata-unitkerja') echo "active" ?>">
             <i class="bi bi-circle"></i><span>Data Unit Kerja</span>
           </a>
         </li>

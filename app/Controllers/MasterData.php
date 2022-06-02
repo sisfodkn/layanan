@@ -24,18 +24,16 @@ class MasterData extends BaseController
 
     public function unitkerja()
     {
-        // $data['activeMenu'] = 'masterdata-unitkerja';
-        // $data['unitkerja'] = $this->unitkerjaModel->findAll();
-        $listUnitkerja = $this->unitkerjaModel->findAll();
+        // $listUnitkerja = $this->unitkerjaModel->findAll();
         $data = [
             'activeMenu' => 'masterdata-unitkerja',
-            'unitkerja' => $listUnitkerja
+            'unitkerja' => $this->unitkerjaModel->findAll()
         ];
 
         echo view('base/header');
         echo view('base/topbar');
         echo view('base/sidebar', $data);
-        echo view('masterdata/unitkerja', $data);
+        echo view('masterdata/unitkerja/index', $data);
         echo view('base/footer');
     }
 

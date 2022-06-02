@@ -18,44 +18,58 @@
         <div class="card">
           <div class="card-body">
             <?php if (!empty(session()->getFlashdata('message'))) : ?>
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <?php echo session()->getFlashdata('message'); ?>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?php echo session()->getFlashdata('message'); ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
             <?php endif; ?>
-            <a href="<?= base_url('/masterdata/unit/input'); ?>" class="btn btn-block btn-primary">Tambah Unit Kerja</a>
+            <a href="<?= base_url('/unitkerja/add'); ?>" class="btn btn-block btn-primary">Tambah Unit Kerja</a>
             <hr />
             <!-- <h5 class="card-title">Datatables</h5>
               <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
  -->
-            <table id="tableUnitkerja" class="table table-bordered table-striped">
-                <thead>
-                    <tr class="text-center">
-                        <th>Kode Unit</th>
-                        <th>Nama Unit</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    foreach ($unitkerja as $row) :
-                    $id = $row['id'];
-                    ?>
-                        <tr>
-                            <td><?= $row['kode_unit']; ?></td>
-                            <td><?= $row['nama_unit']; ?></td>
-                            <td class="text-center">
-                                <a title="Edit" href="<?= base_url("masterdata/unit/edit/$id"); ?>" class="btn btn-info btn-sm">Edit</a>
-                                <a title="Hapus" href="<?= base_url("masterdata/unit/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Hapus</a>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                </tbody>
+            <div class="col-4">
+              <form action="" method="post">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Masukkan keyword..." name="keyword">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit" name="search">Cari</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <table id=" tableUnitkerja" class="table table-bordered table-striped">
+              <thead>
+                <tr class="text-center">
+                  <th>No</th>
+                  <th>Kode Unit</th>
+                  <th>Nama Unit</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                $no = 1 + (10 * ($currentPage - 1));
+                foreach ($unitkerja as $row) :
+                  $id = $row['id'];
+                ?>
+                  <tr>
+                    <td><?= $no++; ?></td>
+                    <td><?= $row['kode_unit']; ?></td>
+                    <td><?= $row['nama_unit']; ?></td>
+                    <td class="text-center">
+                      <a title="Edit" href="<?= base_url("unitkerja/edit/$id"); ?>" class="btn btn-info btn-sm">Edit</a>
+                      <a title="Hapus" href="<?= base_url("unitkerja/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Hapus</a>
+                    </td>
+                  </tr>
+                <?php endforeach; ?>
+              </tbody>
             </table>
+            <?= $pager->links('unitkerja', 'default_full'); ?>
 
-<!--
+            <!--
             <table class="table datatable">
               <thead>
                 <tr>
