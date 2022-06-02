@@ -26,6 +26,94 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
+  <script>
+  $(function() {
+    $("#tabelPertanyaan").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelPertanyaan_wrapper .col-md-6:eq(0)');
+
+    $("#tabelKatSistem").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelKatSistem_wrapper .col-md-6:eq(0)');
+
+    $("#tabelKategori").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelKategori_wrapper .col-md-6:eq(0)');
+
+    $("#tabelPilar").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelPilar_wrapper .col-md-6:eq(0)');
+
+    $("#tabelPSE").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelPSE_wrapper .col-md-6:eq(0)');
+
+    $("#tabelSubtopik").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelSubtopik_wrapper .col-md-6:eq(0)');
+
+    $("#tabelTopik").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelTopik_wrapper .col-md-6:eq(0)');
+
+    $("#tabelRisk").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelRisk_wrapper .col-md-6:eq(0)');
+
+    $("#tabelUser").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelUser_wrapper .col-md-6:eq(0)');
+
+    $("#tabelInstrumen").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelInstrumen_wrapper .col-md-6:eq(0)');
+
+    $("#tabelIdentitas").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "searching": false
+    }).buttons().container().appendTo('#tabelIdentitas_wrapper .col-md-6:eq(0)');
+
+    $("#tabelDetailGroup").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#tabelSubtopik_wrapper .col-md-6:eq(0)');
+
+  });
+</script>
 
   </body>
 

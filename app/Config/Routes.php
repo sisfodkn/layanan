@@ -33,9 +33,18 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index', ['filter' => 'usersAuth']);
 $routes->get('/login', 'User::index');
-$routes->get('/peminjaman/kendaraan', 'Peminjaman::kendaraan', ['filter' => 'usersAuth']);
+
+// Master Data
 $routes->get('/masterdata/pegawai', 'MasterData::pegawai', ['filter' => 'usersAuth']);
+$routes->get('/masterdata/unitkerja', 'MasterData::unitkerja', ['filter' => 'usersAuth']);
+
+// Peminjaman
+$routes->get('/peminjaman/kendaraan', 'Peminjaman::kendaraan', ['filter' => 'usersAuth']);
+
+// Pengajuan
 $routes->get('/pengajuan/pemeliharaan', 'Pengajuan::pemeliharaan', ['filter' => 'usersAuth']);
+
+// Permintaan
 $routes->get('/permintaan/atk', 'Permintaan::atk', ['filter' => 'usersAuth']);
 
 /*
