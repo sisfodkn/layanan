@@ -20,9 +20,6 @@
             <?php if (!empty(session()->getFlashdata('message'))) : ?>
               <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <?php echo session()->getFlashdata('message'); ?>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
               </div>
             <?php endif; ?>
             <a href="<?= base_url('/unitkerja/add'); ?>" class="btn btn-block btn-primary">Tambah Unit Kerja</a>
@@ -61,7 +58,7 @@
                     <td><?= $row['nama_unit']; ?></td>
                     <td class="text-center">
                       <a title="Edit" href="<?= base_url("unitkerja/edit/$id"); ?>" class="btn btn-info btn-sm">Edit</a>
-                      <a title="Hapus" href="<?= base_url("unitkerja/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data ?')">Hapus</a>
+                      <a title="Hapus" href="<?= base_url("unitkerja/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus Kode Unit <?= $row['kode_unit']; ?> ?')">Hapus</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
