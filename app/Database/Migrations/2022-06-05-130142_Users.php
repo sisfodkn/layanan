@@ -11,8 +11,8 @@ class Users extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'int',
-                'unsigned' => TRUE,
-                'auto_increment' => TRUE
+                'unsigned' => true,
+                'auto_increment' => true
             ],
             'username' => [
                 'type' => 'varchar',
@@ -31,8 +31,10 @@ class Users extends Migration
                 'unsigned' => TRUE
             ],
         ]);
+
         $this->forge->addPrimaryKey('id');
         $this->forge->addForeignKey('id_pegawai', 'pegawai', 'id');
+
         $this->forge->createTable('users');
     }
 

@@ -11,8 +11,8 @@ class UnitKerja extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'int',
-                'unsigned' => TRUE,
-                'auto_increment' => TRUE
+                'unsigned' => true,
+                'auto_increment' => true
             ],
             'kode_unit' => [
                 'type' => 'varchar',
@@ -23,7 +23,8 @@ class UnitKerja extends Migration
                 'constraint' => '100'
             ]
         ]);
-        $this->forge->addKey('id');
+
+        $this->forge->addKey('id', true);
         $this->forge->createTable('unit_kerja');
     }
 

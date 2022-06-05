@@ -11,8 +11,8 @@ class Pegawai extends Migration
         $this->forge->addField([
             'id' => [
                 'type' => 'int',
-                'unsigned' => TRUE,
-                'auto_increment' => TRUE
+                'unsigned' => true,
+                'auto_increment' => true
             ],
             'nip_nrp' => [
                 'type' => 'varchar',
@@ -27,8 +27,10 @@ class Pegawai extends Migration
                 'constraint' => '100'
             ]
         ]);
+
         $this->forge->addPrimaryKey('id');
         $this->forge->addForeignKey('id_jabatan', 'jabatan', 'id');
+
         $this->forge->createTable('users');
     }
 
