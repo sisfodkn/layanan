@@ -20,7 +20,7 @@ class User extends BaseController
         if ($dataUsers) {
             if ($dataUsers['password'] == md5($password)) {
                 $dataSession = [
-                    'userid' => $dataUsers['userid'],
+                    'id' => $dataUsers['id'],
                     'username' => $dataUsers['username'],
                     'password' => $dataUsers['password'],
                     'logged_in' => TRUE
