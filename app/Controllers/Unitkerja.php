@@ -15,14 +15,9 @@ class Unitkerja extends BaseController
 
     public function index()
     {
-        $page = $this->request->getVar('page_unitkerja');
-        $currentPage = $page ? $page : 1;
-
         $data = [
             'activeMenu'    => 'masterdata-unitkerja',
-            'unitkerja'     => $this->unitkerjaModel->paginate(10, 'unitkerja'),
-            'pager'         => $this->unitkerjaModel->pager,
-            'currentPage'   => $currentPage
+            'unitkerja'     => $this->unitkerjaModel->getAllUnitKerja()
         ];
 
         echo view('base/header');

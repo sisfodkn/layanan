@@ -41,31 +41,31 @@
               <thead>
                 <tr class="text-center">
                   <th>No</th>
-                  <th>Kode Unit</th>
+                  <th>ID Unit</th>
                   <th>Nama Unit</th>
+                  <th>Parent Unit</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-                $no = 1 + (10 * ($currentPage - 1));
+                $no = 1;
                 foreach ($unitkerja as $row) :
-                  $id = $row['id_unit'];
+                  $id = $row->id;
                 ?>
                   <tr>
                     <td><?= $no++; ?></td>
-                    <td><?= $row['id_unit']; ?></td>
-                    <td><?= $row['nama_unit']; ?></td>
-                    <td><?= $row['parent_id']; ?></td>
+                    <td><?= $row->id; ?></td>
+                    <td><?= $row->nama; ?></td>
+                    <td><?= $row->parent; ?></td>
                     <td class="text-center">
                       <a title="Edit" href="<?= base_url("unitkerja/edit/$id"); ?>" class="btn btn-info btn-sm">Edit</a>
-                      <a title="Hapus" href="<?= base_url("unitkerja/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus Kode Unit <?= $row['id_unit']; ?> ?')">Hapus</a>
+                      <a title="Hapus" href="<?= base_url("unitkerja/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus Kode Unit <?= $row->id; ?> ?')">Hapus</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
               </tbody>
             </table>
-            <?= $pager->links('unitkerja', 'default_full'); ?>
 
             <!--
             <table class="table datatable">
