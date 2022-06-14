@@ -4,42 +4,39 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Users extends Migration
+class Pegawai extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id' => [
+            'id_pegawai' => [
                 'type' => 'int',
                 'unsigned' => true,
                 'auto_increment' => true
             ],
-            'username' => [
+            'nip_nrp' => [
                 'type' => 'varchar',
-                'constraint' => '20'
+                'constraint' => '50'
             ],
-            'password' => [
+            'nama_pegawai' => [
                 'type' => 'varchar',
                 'constraint' => '100'
             ],
-            'role' => [
-                'type' => 'varchar',
-                'constraint' => '20'
-            ],
-            'id_pegawai' => [
+            'id_jabatan' => [
                 'type' => 'int',
+                'constraint' => '11',
                 'unsigned' => true
-            ],
+            ]
         ]);
 
-        $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('id_pegawai', 'pegawai', 'id');
+        $this->forge->addPrimaryKey('id_pegawai');
+        $this->forge->addForeignKey('id_jabatan', 'jabatan', 'id_jabatan');
 
-        $this->forge->createTable('users');
+        $this->forge->createTable('pegawai');
     }
 
     public function down()
     {
-        $this->forge->dropTable('users');
+        $this->forge->dropTable('pegawai');
     }
 }

@@ -4,32 +4,29 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class UnitKerja extends Migration
+class Kelas extends Migration
 {
     public function up()
     {
         $this->forge->addField([
-            'id_unit' => [
+            'id_kelas' => [
                 'type' => 'int',
                 'unsigned' => true
             ],
-            'nama_unit' => [
-                'type' => 'varchar',
-                'constraint' => '100'
-            ],
-            'parent_id' => [
+            'tunkin' => [
                 'type' => 'int',
                 'unsigned' => true,
                 'null' => true
             ]
         ]);
 
-        $this->forge->addPrimaryKey('id_unit');
-        $this->forge->createTable('unit_kerja');
+        $this->forge->addPrimaryKey('id_kelas');
+
+        $this->forge->createTable('kelas');
     }
 
     public function down()
     {
-        $this->forge->dropTable('unit_kerja');
+        $this->forge->dropTable('kelas');
     }
 }
