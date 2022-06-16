@@ -26,14 +26,27 @@
               <?php } ?>
               <div class="col-md-12">
                 <div class="form-floating">
-                  <input type="text" class="form-control" name="inputKode" id="inputKode" placeholder="Kode Unit">
-                  <label for="inputKode">Kode Unit</label>
+                  <input type="text" class="form-control" name="inputId" id="inputId" placeholder="ID Unit">
+                  <label for="inputId">ID Unit</label>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="inputNama" id="inputNama" placeholder="Nama Unit">
                   <label for="floatingTextarea">Nama Unit</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="selectParent" name="selectParent" aria-label="Parent">
+                    <option value=""></option>
+                    <?php
+                    foreach ($listUnitKerja as $isiUnitKerja) :
+                    ?>
+                      <option value="<?= $isiUnitKerja['id_unit']; ?>"><?= $isiUnitKerja['nama_unit']; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                  <label for="selectParent">Parent Unit</label>
                 </div>
               </div>
               <div class="text-left">

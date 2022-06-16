@@ -1,7 +1,7 @@
 <main id="main" class="main">
 
   <div class="pagetitle">
-    <h1>Tambah Unit Kerja</h1>
+    <h1>Ubah Unit Kerja</h1>
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="<?php echo base_url('/') ?>">Home</a></li>
@@ -17,7 +17,7 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Ubah Unit Kerja</h5>
-            <?php $id = $unitkerja['id']; ?>
+            <?php $id = $unitkerja['id_unit']; ?>
             <form class="row g-3" action="<?= base_url("unitkerja/update/$id") ?>" method="post">
               <?php if (session()->getFlashdata('error')) { ?>
                 <div class="alert alert-warning alert-dismissible fade show middle" role="alert">
@@ -26,14 +26,27 @@
               <?php } ?>
               <div class="col-md-12">
                 <div class="form-floating">
-                  <input type="text" class="form-control" name="inputKode" id="inputKode" placeholder="Kode Unit" value="<?= $unitkerja['kode_unit']; ?>">
-                  <label for="inputKode">Kode Unit</label>
+                  <input type="text" class="form-control" name="inputId" id="inputId" placeholder="ID Unit" value="<?= $unitkerja['id_unit']; ?>">
+                  <label for="inputId">ID Unit</label>
                 </div>
               </div>
               <div class="col-12">
                 <div class="form-floating">
                   <input type="text" class="form-control" name="inputNama" id="inputNama" placeholder="Nama Unit" value="<?= $unitkerja['nama_unit']; ?>">
-                  <label for="floatingTextarea">Nama Unit</label>
+                  <label for="inputNama">Nama Unit</label>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-floating mb-3">
+                  <select class="form-select" id="selectParent" name="selectParent" aria-label="Parent">
+                    <option value=""></option>
+                    <?php
+                    foreach ($listUnitKerja as $isiUnitKerja) :
+                    ?>
+                      <option value="<?= $isiUnitKerja['id_unit']; ?>" <?= $unitkerja['parent_id'] == $isiUnitKerja['id_unit'] ? 'selected' : '' ?>><?= $isiUnitKerja['nama_unit']; ?></option>
+                    <?php endforeach; ?>
+                  </select>
+                  <label for="selectParent">Parent Unit</label>
                 </div>
               </div>
               <div class="text-left">

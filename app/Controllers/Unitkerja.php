@@ -2,22 +2,22 @@
 
 namespace App\Controllers;
 
-use App\Models\UnitkerjaModel;
+use App\Models\UnitKerjaModel;
 
-class Unitkerja extends BaseController
+class UnitKerja extends BaseController
 {
-    protected $unitkerjaModel;
+    protected $unitKerjaModel;
 
     function __construct()
     {
-        $this->unitkerjaModel = new UnitkerjaModel();
+        $this->unitKerjaModel = new UnitKerjaModel();
     }
 
     public function index()
     {
         $data = [
             'activeMenu'    => 'masterdata-unitkerja',
-            'unitkerja'     => $this->unitkerjaModel->getAllUnitKerja()
+            'unitkerja'     => $this->unitKerjaModel->getAllParentName()
         ];
 
         echo view('base/header');
@@ -29,38 +29,44 @@ class Unitkerja extends BaseController
 
     public function add()
     {
-        $data['activeMenu'] = 'masterdata-unitkerja';
+        $data = [
+            'listUnitKerja' => $this->unitKerjaModel->findAll(),
+            'activeMenu'    => 'masterdata-unitkerja'
+        ];
         echo view('base/header');
         echo view('base/topbar');
         echo view('base/sidebar', $data);
-        echo view('masterdata/unitkerja/add');
+        echo view('masterdata/unitkerja/add', $data);
         echo view('base/footer');
     }
 
     public function edit($id)
     {
-        $dataUnitkerja = $this->unitkerjaModel->find($id);
+        $dataUnitkerja = $this->unitKerjaModel->find($id);
 
         if (empty($dataUnitkerja)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Unit Kerja Tidak ditemukan !');
         }
-        $data['unitkerja'] = $dataUnitkerja;
+        $data = [
+            'unitkerja'     => $dataUnitkerja,
+            'listUnitKerja' => $this->unitKerjaModel->findAll(),
+            'activeMenu'    => 'masterdata-unitkerja'
+        ];
 
-        $data['activeMenu'] = 'masterdata-unitkerja';
         echo view('base/header');
         echo view('base/topbar');
         echo view('base/sidebar', $data);
-        echo view('masterdata/unitkerja/edit');
+        echo view('masterdata/unitkerja/edit', $data);
         echo view('base/footer');
     }
 
     public function delete($id)
     {
-        $dataUnitkerja = $this->unitkerjaModel->find($id);
+        $dataUnitkerja = $this->unitKerjaModel->find($id);
         if (empty($dataUnitkerja)) {
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Data Unit Kerja Tidak ditemukan !');
         }
-        $this->unitkerjaModel->delete($id);
+        $this->unitKerjaModel->delete($id);
         session()->setFlashdata('message', 'Data Unit Kerja Berhasil dihapus');
         return redirect()->to('/unitkerja');
     }
@@ -69,10 +75,10 @@ class Unitkerja extends BaseController
     {
         if (!$this->validate([
 
-            'inputKode' => [
+            'inputId' => [
                 'rules' => 'required',
                 'errors' => [
-                    'required' => 'Kode Unit harus diisi.'
+                    'required' => 'ID Unit harus diisi.'
                 ]
             ],
             'inputNama' => [
@@ -80,17 +86,24 @@ class Unitkerja extends BaseController
                 'errors' => [
                     'required' => 'Nama Unit harus diisi.'
                 ]
+            ],
+            'selectParent' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Parent Unit harus diisi.'
+                ]
             ]
         ])) {
             session()->setFlashdata('error', $this->validator->listErrors());
             return redirect()->to(base_url('/unitkerja/add'));
         } else {
-            $inputKode = $this->request->getVar('inputKode');
-            $this->unitkerjaModel->insert([
-                'kode_unit' => $inputKode,
-                'nama_unit' => $this->request->getVar('inputNama')
+            $inputId = $this->request->getVar('inputId');
+            $this->unitKerjaModel->insert([
+                'id_unit' => $inputId,
+                'nama_unit' => $this->request->getVar('inputNama'),
+                'parent_id' => $this->request->getVar('selectParent')
             ]);
-            session()->setFlashdata('message', 'Unit Kerja ' . $inputKode . ' Berhasil ditambah');
+            session()->setFlashdata('message', 'Unit Kerja ' . $inputId . ' Berhasil ditambah');
             return redirect()->to('/unitkerja');
         }
     }
@@ -116,7 +129,7 @@ class Unitkerja extends BaseController
             return redirect()->to(base_url('/unitkerja/edit'));
         } else {
             $inputKode = $this->request->getVar('inputKode');
-            $this->unitkerjaModel->update($id, [
+            $this->unitKerjaModel->update($id, [
                 'kode_unit' => $inputKode,
                 'nama_unit' => $this->request->getVar('inputNama')
             ]);

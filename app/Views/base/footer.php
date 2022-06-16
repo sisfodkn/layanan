@@ -11,6 +11,7 @@
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
+  </div>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -26,6 +27,57 @@
 
   <!-- Template Main JS File -->
   <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
+
+  <!-- jQuery -->
+  <script src="<?php echo base_url('assets/vendor/plugins/jquery/jquery.min.js') ?>"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="<?php echo base_url('assets/vendor/plugins/jquery-ui/jquery-ui.min.js') ?>"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+
+  <!-- DataTables  & Plugins -->
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables/jquery.dataTables.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-responsive/js/dataTables.responsive.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-responsive/js/responsive.bootstrap4.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-buttons/js/dataTables.buttons.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-buttons/js/buttons.bootstrap4.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/jszip/jszip.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/pdfmake/pdfmake.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/pdfmake/vfs_fonts.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-buttons/js/buttons.html5.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-buttons/js/buttons.print.min.js') ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/plugins/datatables-buttons/js/buttons.colVis.min.js') ?>"></script>
+  <script>
+    $(function() {
+      $("#tableUnitkerja").DataTable({
+        "pageLength": 20,
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#tableUnitkerja_wrapper .col-md-6:eq(0)');
+
+      $("#tableJabatan").DataTable({
+        "pageLength": 20,
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#tableJabatan_wrapper .col-md-6:eq(0)');
+
+      $("#tableRuangan").DataTable({
+        "pageLength": 20,
+        "responsive": true,
+        "lengthChange": false,
+        "autoWidth": false,
+        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+      }).buttons().container().appendTo('#tableRuangan_wrapper .col-md-6:eq(0)');
+
+    });
+  </script>
 
   </body>
 

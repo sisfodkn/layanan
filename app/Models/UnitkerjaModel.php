@@ -4,12 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class UnitkerjaModel extends Model
+class UnitKerjaModel extends Model
 {
     protected $table = "unit_kerja";
     protected $primaryKey = 'id_unit';
 
-    public function getAllUnitKerja()
+    public function getAllParentName()
     {
         $query = $this->db->query("SELECT
             u1.id_unit AS id, u1.nama_unit AS nama, u2.nama_unit AS parent

@@ -8,7 +8,7 @@ class JabatanSeeder extends Seeder
 {
     public function run()
     {
-        $jabatan_data = [
+        $listData = [
             ['nama_jabatan' => 'Administrator'],
             ['nama_jabatan' => 'Sekretaris Jenderal', 'id_unit' => '100000', 'id_kelas' => '17'],
             ['nama_jabatan' => 'Staf Ahli', 'id_unit' => '105000', 'id_kelas' => '16'],
@@ -479,7 +479,7 @@ class JabatanSeeder extends Seeder
             ['nama_jabatan' => 'Pengadministrasi Umum', 'id_unit' => '112301', 'id_kelas' => '6']
         ];
 
-        foreach ($jabatan_data as $data) {
+        foreach ($listData as $data) {
             $this->db->table('jabatan')->insert($data);
         }
     }

@@ -8,7 +8,7 @@ class PegawaiSeeder extends Seeder
 {
     public function run()
     {
-        $pegawai_data = [
+        $listData = [
             [
                 'nip_nrp' => '0000000000',
                 'nama_pegawai' => 'Administrator',
@@ -16,7 +16,7 @@ class PegawaiSeeder extends Seeder
             ]
         ];
 
-        foreach ($pegawai_data as $data) {
+        foreach ($listData as $data) {
             $this->db->table('pegawai')->insert($data);
         }
     }

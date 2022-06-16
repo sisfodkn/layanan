@@ -8,7 +8,7 @@ class UsersSeeder extends Seeder
 {
     public function run()
     {
-        $users_data = [
+        $listData = [
             [
                 'username' => 'admin',
                 'password' => md5('admin'),
@@ -17,7 +17,7 @@ class UsersSeeder extends Seeder
             ]
         ];
 
-        foreach ($users_data as $data) {
+        foreach ($listData as $data) {
             $this->db->table('users')->insert($data);
         }
     }

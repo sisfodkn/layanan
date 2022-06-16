@@ -8,7 +8,7 @@ class UnitKerjaSeeder extends Seeder
 {
     public function run()
     {
-        $unitkerja_data = [
+        $listData = [
             ['id_unit' => '100000', 'nama_unit' => 'Sekretariat Jenderal Dewan Ketahanan Nasional'],
             ['id_unit' => '101000', 'nama_unit' => 'Kedeputian Bidang Sistem Nasional', 'parent_id' => '100000'],
             ['id_unit' => '102000', 'nama_unit' => 'Kedeputian Bidang Pengkajian dan Penginderaan', 'parent_id' => '100000'],
@@ -118,7 +118,7 @@ class UnitKerjaSeeder extends Seeder
             ['id_unit' => '112301', 'nama_unit' => 'Sub Koordinator Kelompok TU Pengawasan Internal', 'parent_id' => '112300']
         ];
 
-        foreach ($unitkerja_data as $data) {
+        foreach ($listData as $data) {
             $this->db->table('unit_kerja')->insert($data);
         }
     }

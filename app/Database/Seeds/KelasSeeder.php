@@ -8,7 +8,7 @@ class KelasSeeder extends Seeder
 {
     public function run()
     {
-        $users_data = [
+        $listData = [
             [
                 'id_kelas' => '17',
                 'tunkin' => '0'
@@ -79,7 +79,7 @@ class KelasSeeder extends Seeder
             ],
         ];
 
-        foreach ($users_data as $data) {
+        foreach ($listData as $data) {
             $this->db->table('kelas')->insert($data);
         }
     }

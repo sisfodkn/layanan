@@ -13,13 +13,23 @@
     <li class="nav-heading">Master</li>
 
     <li class="nav-item">
-      <a class="nav-link <?php if (!in_array($activeMenu, ['masterdata-pegawai', 'masterdata-unitkerja'])) echo "collapsed" ?>" data-bs-target="#masterdata-nav" data-bs-toggle="collapse" href="#">
+      <a class="nav-link <?php if (!in_array($activeMenu, ['masterdata-pegawai', 'masterdata-unitkerja', 'masterdata-jabatan', 'masterdata-ruangan'])) echo "collapsed" ?>" data-bs-target="#masterdata-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-clipboard-data"></i><span>Master Data</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
-      <ul id="masterdata-nav" class="nav-content collapse <?php if (in_array($activeMenu, ['masterdata-pegawai', 'masterdata-unitkerja'])) echo "show" ?>" data-bs-parent="#sidebar-nav">
+      <ul id="masterdata-nav" class="nav-content collapse <?php if (in_array($activeMenu, ['masterdata-pegawai', 'masterdata-unitkerja', 'masterdata-jabatan', 'masterdata-ruangan'])) echo "show" ?>" data-bs-parent="#sidebar-nav">
         <li>
           <a href="<?php echo base_url('/unitkerja') ?>" class="<?php if ($activeMenu == 'masterdata-unitkerja') echo "active" ?>">
             <i class="bi bi-circle"></i><span>Data Unit Kerja</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url('/jabatan') ?>" class="<?php if ($activeMenu == 'masterdata-jabatan') echo "active" ?>">
+            <i class="bi bi-circle"></i><span>Data Jabatan</span>
+          </a>
+        </li>
+        <li>
+          <a href="<?php echo base_url('/ruangan') ?>" class="<?php if ($activeMenu == 'masterdata-ruangan') echo "active" ?>">
+            <i class="bi bi-circle"></i><span>Data Ruangan</span>
           </a>
         </li>
         <li>

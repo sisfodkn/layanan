@@ -14,60 +14,50 @@
   <section class="section">
     <div class="row">
       <div class="col-lg-12">
-
-        <div class="card">
-          <div class="card-body">
-            <?php if (!empty(session()->getFlashdata('message'))) : ?>
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <?php echo session()->getFlashdata('message'); ?>
-              </div>
-            <?php endif; ?>
-            <a href="<?= base_url('/unitkerja/add'); ?>" class="btn btn-block btn-primary">Tambah Unit Kerja</a>
-            <hr />
-            <!-- <h5 class="card-title">Datatables</h5>
+        <div class="content-wrapper">
+          <div class="card">
+            <div class="card-body">
+              <?php if (!empty(session()->getFlashdata('message'))) : ?>
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                  <?php echo session()->getFlashdata('message'); ?>
+                </div>
+              <?php endif; ?>
+              <a href="<?= base_url('/unitkerja/add'); ?>" class="btn btn-block btn-primary">Tambah Unit Kerja</a>
+              <hr />
+              <!-- <h5 class="card-title">Datatables</h5>
               <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
  -->
-            <div class="col-4">
-              <form action="" method="post">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Masukkan keyword..." name="keyword">
-                  <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="submit" name="search">Cari</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-            <table id=" tableUnitkerja" class="table table-bordered table-striped">
-              <thead>
-                <tr class="text-center">
-                  <th>No</th>
-                  <th>ID Unit</th>
-                  <th>Nama Unit</th>
-                  <th>Parent Unit</th>
-                  <th>Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
-                <?php
-                $no = 1;
-                foreach ($unitkerja as $row) :
-                  $id = $row->id;
-                ?>
-                  <tr>
-                    <td><?= $no++; ?></td>
-                    <td><?= $row->id; ?></td>
-                    <td><?= $row->nama; ?></td>
-                    <td><?= $row->parent; ?></td>
-                    <td class="text-center">
-                      <a title="Edit" href="<?= base_url("unitkerja/edit/$id"); ?>" class="btn btn-info btn-sm">Edit</a>
-                      <a title="Hapus" href="<?= base_url("unitkerja/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus Kode Unit <?= $row->id; ?> ?')">Hapus</a>
-                    </td>
+              <table id="tableUnitkerja" class="table table-bordered table-striped">
+                <thead>
+                  <tr class="text-center">
+                    <th>No</th>
+                    <th>ID Unit</th>
+                    <th>Nama Unit</th>
+                    <th>Parent Unit</th>
+                    <th>Aksi</th>
                   </tr>
-                <?php endforeach; ?>
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  <?php
+                  $no = 1;
+                  foreach ($unitkerja as $row) :
+                    $id = $row->id;
+                  ?>
+                    <tr>
+                      <td><?= $no++; ?></td>
+                      <td><?= $row->id; ?></td>
+                      <td><?= $row->nama; ?></td>
+                      <td><?= $row->parent; ?></td>
+                      <td class="text-center">
+                        <a title="Edit" href="<?= base_url("unitkerja/edit/$id"); ?>" class="btn btn-info btn-sm">Edit</a>
+                        <a title="Hapus" href="<?= base_url("unitkerja/delete/$id"); ?>" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus Kode Unit <?= $row->id; ?> ?')">Hapus</a>
+                      </td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
 
-            <!--
+              <!--
             <table class="table datatable">
               <thead>
                 <tr>
@@ -118,8 +108,10 @@
             </table>
 -->
 
+            </div>
           </div>
         </div>
+        <!-- /.content-wrapper -->
 
       </div>
     </div>

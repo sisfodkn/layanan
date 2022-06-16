@@ -13,5 +13,6 @@ class InitialSeeder extends Seeder
         $this->call('JabatanSeeder');
         $this->call('PegawaiSeeder');
         $this->call('UsersSeeder');
+        $this->call('RuanganSeeder');
     }
 }

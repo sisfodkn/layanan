@@ -37,9 +37,17 @@ $routes->get('/login', 'User::index');
 // Master Data
 $routes->get('/masterdata/pegawai', 'MasterData::pegawai', ['filter' => 'usersAuth']);
 // Unit Kerja
-$routes->get('/unitkerja', 'Unitkerja::index', ['filter' => 'usersAuth']);
-$routes->get('/unitkerja/add', 'Unitkerja::add', ['filter' => 'usersAuth']);
-$routes->get('/unitkerja/edit/(:num)', 'Unitkerja::edit/$1', ['filter' => 'usersAuth']);
+$routes->get('/unitkerja', 'UnitKerja::index', ['filter' => 'usersAuth']);
+$routes->get('/unitkerja/add', 'UnitKerja::add', ['filter' => 'usersAuth']);
+$routes->get('/unitkerja/edit/(:num)', 'UnitKerja::edit/$1', ['filter' => 'usersAuth']);
+// Jabatan
+$routes->get('/jabatan', 'Jabatan::index', ['filter' => 'usersAuth']);
+$routes->get('/jabatan/add', 'Jabatan::add', ['filter' => 'usersAuth']);
+$routes->get('/jabatan/edit/(:num)', 'Jabatan::edit/$1', ['filter' => 'usersAuth']);
+// Ruangan
+$routes->get('/ruangan', 'Ruangan::index', ['filter' => 'usersAuth']);
+$routes->get('/ruangan/add', 'Ruangan::add', ['filter' => 'usersAuth']);
+$routes->get('/ruangan/edit/(:num)', 'Ruangan::edit/$1', ['filter' => 'usersAuth']);
 
 // Peminjaman
 $routes->get('/peminjaman/kendaraan', 'Peminjaman::kendaraan', ['filter' => 'usersAuth']);
